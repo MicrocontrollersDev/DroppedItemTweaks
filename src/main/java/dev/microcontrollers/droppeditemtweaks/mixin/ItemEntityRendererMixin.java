@@ -20,10 +20,10 @@ public class ItemEntityRendererMixin {
     @ModifyReturnValue(method = "getRenderedAmount", at = @At("RETURN"))
     //#if MC >= 1.20.6
     private static int forceStackAmount(int original, int stackSize) {
-        return Math.min(DroppedItemTweaksConfig.CONFIG.instance().dropStackCount, stackSize);
+        return DroppedItemTweaksConfig.CONFIG.instance().dropStackCount != 0 ? Math.min(DroppedItemTweaksConfig.CONFIG.instance().dropStackCount, stackSize) : original;
         //#else
         //$$ private int forceStackAmount(int original, ItemStack stack) {
-        //$$    return Math.min(DroppedItemTweaksConfig.CONFIG.instance().dropStackCount, stack.getCount());
+        //$$    return DroppedItemTweaksConfig.CONFIG.instance().dropStackCount != 0 ? Math.min(DroppedItemTweaksConfig.CONFIG.instance().dropStackCount, stack.getCount()) : original;
         //#endif
     }
 }

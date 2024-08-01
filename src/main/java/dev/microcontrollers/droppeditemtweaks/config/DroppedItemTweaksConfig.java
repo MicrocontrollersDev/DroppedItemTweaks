@@ -21,7 +21,7 @@ public class DroppedItemTweaksConfig {
             .build();
 
     @SerialEntry public boolean staticItems = false;
-    @SerialEntry public int dropStackCount = 5;
+    @SerialEntry public int dropStackCount = 0;
 
     public static Screen configScreen(Screen parent) {
         return YetAnotherConfigLib.create(CONFIG, ((defaults, config, builder) -> builder
@@ -36,10 +36,10 @@ public class DroppedItemTweaksConfig {
                                 .build())
                         .option(Option.createBuilder(int.class)
                                 .name(Text.literal("Dropped Stack Item Count"))
-                                .description(OptionDescription.of(Text.of("The max amount of dropped items to render. By default, Minecraft only renders up to 5 of an item at once.")))
-                                .binding(5, () -> config.dropStackCount, newVal -> config.dropStackCount = newVal)
+                                .description(OptionDescription.of(Text.of("The max amount of dropped items to render. This does not scale like vanilla. Set to 0 to disable.")))
+                                .binding(0, () -> config.dropStackCount, newVal -> config.dropStackCount = newVal)
                                 .controller(opt -> IntegerSliderControllerBuilder.create(opt)
-                                        .range(1, 64)
+                                        .range(0, 64)
                                         .step(1))
                                 .build())
                         .build())
