@@ -10,6 +10,8 @@ Downloads can be found on the [Modrinth page](https://modrinth.com/mod/droppedit
 
 - Static Dropped Items
 - Dropped Stack Item Count
+- Item Scale
+- UHC Overlay
 
 ## Modpack?
 
