@@ -1,3 +1,5 @@
+# Moved to https://codeberg.org/MicrocontrollersDev/DroppedItemTweaks
+
 # Dropped Item Tweaks
 
 Small changes to the way dropped items render.
